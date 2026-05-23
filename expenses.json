@@ -10,5 +10,23 @@
         "amount": 4.0,
         "category": "Shopping",
         "date": "2026-05-23"
+    },
+    {
+        "title": "lunch",
+        "amount": 2.5,
+        "category": "Food",
+        "date": "2026-05-23"
+    },
+    {
+        "title": "car gas",
+        "amount": 11.0,
+        "category": "Transport",
+        "date": "2026-05-23"
+    },
+    {
+        "title": "phone data",
+        "amount": 5.5,
+        "category": "Bills",
+        "date": "2026-05-23"
     }
 ]

@@ -16,7 +16,7 @@ def show_menu():
 def get_valid_amount():
     while True:
         try:
-            amount = float(input("  Amount ($): ").strip())
+            amount = float(input("  Amount (OMR): ").strip())
             if amount <= 0:
                 print("Amount must be greater than 0.")
             else:
@@ -80,7 +80,24 @@ def add_expense(expenses):
     save_expenses(expenses)
 
     print(f"\n Expense saved!")
-    print(f"     {title} | OMR{amount} | {category} | {expense_date}")
+    print(f"     {title} | OMR{ amount} | {category} | {expense_date}")
+
+
+def view_expenses(expenses):
+    print("\n" + "-"*40)
+    print(" VIEW ALL EXPENSES")
+    print("-"*40)
+    
+    if not expenses:
+        print(" No expenses to display.")
+        return
+        
+    for i, expense in enumerate(expenses, 1):
+        print(f"  {i}. {expense['date']} | {expense['category']:<12} | OMR{expense['amount']:<8} | {expense['title']}")
+
+    print("-"*40)
+    print(f" total records: {len(expenses)}")
+        
 
 
 def main():
@@ -93,7 +110,7 @@ def main():
         if choice == "1":
             add_expense(expenses)
         elif choice == "2":
-            print("\n [View Expenses - Coming Soon]")
+            view_expenses(expenses)
         elif choice == "3":
             print("\n [Total Spending - Coming Soon]")
         elif choice == "4":
